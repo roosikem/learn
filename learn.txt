@@ -15,5 +15,25 @@ Ticket No. 2
 Kindly provide the necessary information and complete the dependencies to unblock this ticket.
 
 
+Here’s your corrected and professional version of the paragraph:
+
+
+---
+
+This update is related to creating secrets using our TCT tool.
+Currently, we have the flexibility to update the region configuration, and based on the selected region, the tool will create the secret in that region.
+
+This change will not impact the existing secrets unless a new region is explicitly provided.
+For local development, the application can use this variable to run properly.
+
+In the existing ECS service, the DevOps team can configure and update this variable value as needed for the application.
+
+
+---
+
+Would you also like a slightly more concise version depending on where you're planning to use it (e.g., Jira ticket, email, Confluence)?
+
+
+
 
 
