@@ -1,1 +1,19 @@
-fgfgg
+
+
+Before starting development on this ticket, the following details are required:
+
+API endpoint and request payload details for invoking the push notification service.
+
+
+Additionally, the following prerequisite tickets need to be completed before proceeding with this work:
+
+Ticket No. 1
+
+Ticket No. 2
+
+
+Kindly provide the necessary information and complete the dependencies to unblock this ticket.
+
+
+
+
