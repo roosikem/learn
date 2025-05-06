@@ -1,3 +1,74 @@
+Here’s a detailed and professional Jira ticket description for your requirement:
+
+
+---
+
+Title:
+Modify TCT Backend to Use Single DB (Disable Multitenancy via Config)
+
+Type:
+Refactor / Configuration Update
+
+Description:
+Refactor the TCT backend to use a single database instead of the current multi-tenant setup. If feasible, disable multitenancy through a configuration switch. Retain and comment out the existing multitenancy code for potential future use, as discussed with Shyam.
+
+Objective:
+
+Simplify the backend setup by switching to a single DB mode.
+
+Ensure flexibility to re-enable multitenancy in the future if required.
+
+
+Scope of Work:
+
+Introduce a configuration flag to control multitenancy enablement.
+
+When multitenancy is disabled, route all operations to the default single database instance.
+
+Comment out multitenancy-related code blocks without deletion for future reference.
+
+Ensure no impact on existing functionality.
+
+Test application behavior with both single DB and multitenancy modes.
+
+
+Acceptance Criteria:
+
+[ ] A config property is introduced to enable/disable multitenancy.
+
+[ ] When disabled, the system operates with a single database instance.
+
+[ ] All multitenancy logic is safely commented with clear annotations.
+
+[ ] Application runs without errors in single DB mode.
+
+[ ] Changes verified and confirmed with Shyam.
+
+[ ] All related test cases are updated accordingly.
+
+
+Impact Area:
+
+Configuration files
+
+Tenant resolution/interceptor logic
+
+Repository/data access layer
+
+
+Assignee:
+[Assign as needed]
+
+Priority:
+[Set based on sprint planning – e.g., Medium/High]
+
+
+---
+
+Would you like this converted into Jira Markdown format as well?
+
+
+
 Here’s a professional and complete Jira ticket description based on your input:
 
 
