@@ -4,6 +4,81 @@ Here’s a professional Jira ticket description for your request:
 ---
 
 Title:
+Backend Endpoint to Retrieve Engine Configuration in JSON Format
+
+Type:
+Feature / Backend API
+
+Description:
+Develop a backend API endpoint to retrieve engine configuration details in a specific JSON format. The response should include key-value pairs, where the key name (e.g., apix_key) is dynamically derived from the configuration properties stored in the engine configuration database.
+
+Objective:
+
+Expose a clean, structured JSON API for engine configuration retrieval.
+
+Dynamically fetch key names from configuration properties stored in the DB.
+
+
+Expected Response Format:
+
+{
+  "apix_key": "some value"
+}
+
+Scope of Work:
+
+Create a GET endpoint (e.g., /api/engine/config).
+
+Fetch the required property key name and its corresponding value from the engine configuration table.
+
+Build and return the JSON response using the key name from the DB.
+
+Ensure proper error handling if the key or value is not present.
+
+Secure the endpoint if necessary.
+
+
+Acceptance Criteria:
+
+[ ] Endpoint is accessible and returns configuration in the specified JSON format.
+
+[ ] Key name is fetched dynamically from the DB.
+
+[ ] Proper logging and exception handling are in place.
+
+[ ] Unit and integration tests are added.
+
+[ ] API documentation is updated if required.
+
+
+Impact Area:
+
+Engine Configuration Service
+
+API Controller Layer
+
+Configuration DB Access
+
+
+Assignee:
+[Assign as needed]
+
+Priority:
+[Set as appropriate – e.g., High/Medium]
+
+
+---
+
+Would you like to include authentication or role-based access control for this endpoint?
+
+
+
+Here’s a professional Jira ticket description for your request:
+
+
+---
+
+Title:
 Refactoring - Create Role Using Naming Convention ENGINE_VIEW_ROLE
 
 Type:
