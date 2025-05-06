@@ -1,3 +1,64 @@
+Here’s a professional and complete Jira ticket description based on your input:
+
+
+---
+
+Title:
+Refactoring - Create Organization with Default Team
+
+Type:
+Refactor / Enhancement
+
+Description:
+This task involves refactoring the existing Create Organization functionality to ensure that a default team is automatically created whenever a new organization is added to the system.
+
+Objective:
+
+Simplify onboarding by ensuring every organization has at least one team by default.
+
+Improve data consistency and avoid edge cases where an organization exists without a team.
+
+
+Scope of Work:
+
+Modify the organization creation flow to include the creation of a default team (e.g., “Default Team” or configurable name).
+
+Ensure transactional consistency: if default team creation fails, the organization creation should be rolled back.
+
+Add appropriate unit and integration tests.
+
+Update API documentation if applicable.
+
+
+Acceptance Criteria:
+
+[ ] Organization creation API returns success only if default team is also created.
+
+[ ] Default team appears under the newly created organization in the system.
+
+[ ] Unit tests for successful and failed team creation scenarios are added.
+
+[ ] Code follows project-level coding standards and passes code review.
+
+
+Impact Area:
+
+Organization Service / Team Service
+
+Database schema (if any changes are required)
+
+
+Assignee:
+[Assign as needed]
+
+Priority:
+[Set as per team standards – e.g., Medium/High]
+
+
+---
+
+Would you like this in Jira Markdown format too?
+
 
 
 Before starting development on this ticket, the following details are required:
