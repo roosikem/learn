@@ -1,3 +1,72 @@
+Here’s a professional Jira ticket description for your request:
+
+
+---
+
+Title:
+Refactoring - Create Role Using Naming Convention ENGINE_VIEW_ROLE
+
+Type:
+Refactor / Backend Enhancement
+
+Description:
+Refactor the role creation logic to introduce a new role named ENGINE_VIEW_ROLE, adhering to the standard naming conventions for role identifiers.
+
+Objective:
+
+Maintain consistent naming conventions for system roles.
+
+Ensure the new role is properly registered, persisted, and available for assignment within the system.
+
+
+Scope of Work:
+
+Create a new role with the name ENGINE_VIEW_ROLE.
+
+Follow the existing role creation pattern and align with naming standards (uppercase with underscores).
+
+Add the role to default role enumeration/configuration if applicable.
+
+Ensure the role is available in any role management UI or API.
+
+Add test cases to verify role creation and retrieval.
+
+
+Acceptance Criteria:
+
+[ ] Role ENGINE_VIEW_ROLE is created and saved in the system.
+
+[ ] Naming conventions are strictly followed.
+
+[ ] The role is visible and assignable in the system.
+
+[ ] All relevant tests are updated or added.
+
+[ ] No regression issues in role management modules.
+
+
+Impact Area:
+
+Role Service / Role Entity
+
+Role initialization scripts or configurations
+
+Related role management UI or APIs
+
+
+Assignee:
+[Assign as needed]
+
+Priority:
+[Set as appropriate – e.g., Medium]
+
+
+---
+
+Would you like this in Jira Markdown format or include it in a user story format?
+
+
+
 Here’s a detailed and professional Jira ticket description for your requirement:
 
 
