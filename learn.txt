@@ -1,3 +1,17 @@
+@Component
+public class ValidationUtils {
+
+    @Autowired
+    private Validator validator;
+
+    public <T> void validate(T object) {
+        Set<ConstraintViolation<T>> violations = validator.validate(object);
+        if (!violations.isEmpty()) {
+            throw new ConstraintViolationException(violations);
+        }
+    }
+}
+
 public class RoleNameValidator implements ConstraintValidator<ValidRoleName, String> {
 
     private static final Pattern ROLE_PATTERN = Pattern.compile("^[A-Z]+(?:_[A-Z]+)*$");
