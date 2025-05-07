@@ -1,3 +1,81 @@
+Here is the updated Jira ticket including the additional behavior for local and SSO user types:
+
+
+---
+
+Title:
+Backend - Add User Type to Distinguish Between Local and SSO Users During User Creation
+
+Type:
+Feature / Backend Enhancement
+
+Description:
+Enhance the backend user creation logic to introduce a userType field that distinguishes between Local and SSO users. Based on this type, apply conditional handling for password generation and sharing.
+
+Objective:
+
+Introduce user type-based behavior during user creation.
+
+Improve handling of password creation and sharing based on user type.
+
+
+Scope of Work:
+
+Add a userType field (LOCAL or SSO) to the user entity and database schema.
+
+Update user creation logic:
+
+For LOCAL users: Generate a password and return/show it to the user upon successful creation.
+
+For SSO users: Generate and save a password internally, but do not return/share it with the user.
+
+
+Apply default behavior if userType is not provided (e.g., default to LOCAL).
+
+Ensure sensitive data like passwords are stored securely (hashed).
+
+Update unit and integration tests.
+
+Modify API documentation accordingly.
+
+
+Acceptance Criteria:
+
+[ ] userType is saved correctly in the DB as LOCAL or SSO.
+
+[ ] For LOCAL users, password is returned in the API response.
+
+[ ] For SSO users, password is generated and stored, but not shown to the user.
+
+[ ] System behavior is validated with test coverage.
+
+[ ] No breaking changes in existing user management flows.
+
+
+Impact Area:
+
+User Creation API
+
+User Entity & Repository
+
+Password Generation Utility
+
+DB Schema (if needed)
+
+
+Assignee:
+[Assign as needed]
+
+Priority:
+[Medium / High]
+
+
+---
+
+Would you like me to provide a sample API request/response for clarity as part of this ticket?
+
+
+
 Here’s a professional Jira ticket description for your requirement:
 
 
