@@ -1,3 +1,78 @@
+Here’s a professional Jira ticket description for your requirement:
+
+
+---
+
+Title:
+Backend - Add User Type to Distinguish Between Local and SSO Users During User Creation
+
+Type:
+Feature / Backend Enhancement
+
+Description:
+Enhance the user creation process in the backend to include a userType field that clearly distinguishes between Local and SSO users. This distinction will support better access control, auditing, and user management across the system.
+
+Objective:
+
+Introduce a userType attribute (e.g., LOCAL, SSO) during user creation.
+
+Ensure all user records reflect the correct type at the time of onboarding.
+
+
+Scope of Work:
+
+Update user entity/model to include a new userType field.
+
+Modify user creation logic to accept and set this value appropriately.
+
+Update DB schema/migration script if needed.
+
+Apply validation and defaulting logic (e.g., default to LOCAL if not provided).
+
+Update any related user fetch APIs to include the new field.
+
+Reflect changes in API documentation.
+
+
+Acceptance Criteria:
+
+[ ] userType field is added to the user model and database.
+
+[ ] User creation endpoint accepts userType and persists it correctly.
+
+[ ] The field accepts only valid enum values (e.g., LOCAL, SSO).
+
+[ ] All new users are saved with the correct type.
+
+[ ] Unit and integration tests cover the new logic.
+
+[ ] No impact on existing user functionality.
+
+
+Impact Area:
+
+User Entity and Service
+
+User Creation API
+
+Database Schema
+
+Audit/Access Logs (if applicable)
+
+
+Assignee:
+[Assign as needed]
+
+Priority:
+[Medium / High, based on business need]
+
+
+---
+
+Would you like to enforce different validations or behavior based on user type as well?
+
+
+
 @Component
 public class ValidationUtils {
 
