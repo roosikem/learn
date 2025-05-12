@@ -1,3 +1,127 @@
+🛠️ Ticket Title:
+
+Add: Enum Validation for Create & Update ConfigurationProperty API
+
+⸻
+
+📝 Description:
+
+Introduce validation logic to ensure that enum fields (e.g., componentType, userType) in the ConfigurationProperty create and update APIs only accept valid enum values defined in the backend.
+
+Invalid or unrecognized values should trigger a user-friendly error with proper HTTP 400 Bad Request response.
+
+⸻
+
+✅ Acceptance Criteria:
+	•	Validate enum fields using Enum::name() mapping or a dedicated utility.
+	•	Return clear error message listing allowed values if an invalid value is provided.
+	•	Apply this check for both create and update flows.
+	•	Add test cases to validate correct behavior for valid and invalid enums.
+
+⸻
+
+🔍 Impact:
+
+Prevents invalid or unexpected enum values from being stored, improving data integrity and reducing downstream errors.
+
+🔍 Validation Details Implemented:
+	•	Introduced validation for enum fields such as componentType and userType during both create and update operations of ConfigurationProperty.
+	•	Validation logic compares incoming values against the full list of supported enum constants using Enum::name().toUpperCase() for case-insensitive matching.
+	•	If the value is null or does not match any of the allowed enums:
+	•	A ConfigurationPropertyServiceException is thrown.
+	•	The exception message clearly lists the accepted values, improving debuggability and user feedback.
+	•	Example message returned on invalid input:
+
+Kindly provide the correct componentType. Allowed values: [TYPE_A, TYPE_B, TYPE_C]
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+Ticket Title:
+
+Fix: Property Configuration Update API – Certain fields not updating
+
+⸻
+
+Description:
+
+The Property Configuration Update API is not correctly updating all expected fields. Specifically, fields like name, component, or others provided in the request body are not being persisted when modified.
+
+⸻
+
+Acceptance Criteria:
+	•	Ensure all updatable fields from the incoming payload are correctly mapped and saved.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+
+Jira Ticket
+
+Title:
+Implement Account Lockout Mechanism with Manual Unlock API
+
+Type:
+Feature
+
+Priority:
+High
+
+Assignee:
+(Your name or backend team member)
+
+Labels:
+spring-boot, mongodb, security, authentication, admin-api
+
+⸻
+
+✅ Description
+
+Objective:
+Implement a secure account lockout mechanism in the authentication system of our Spring Boot + MongoDB application. Lock the user account after 5 failed login attempts and provide an admin-only endpoint to unlock the account.
+
+⸻
+
+✅ Acceptance Criteria
+	1.	After 5 consecutive failed password attempts:
+	•	The user’s accountLocked flag is set to true.
+	•	The failedLoginAttempts and lockTime are stored in the database.
+	2.	During login:
+	•	If a locked account is detected, an appropriate error message is returned:
+“Your account is locked. Please contact admin to unlock.”
+	3.	Admins can unlock users via the new API:
+
+PUT /api/admin/unlock/{username}
+
+	4.	On unlock:
+	•	accountLocked is reset to false
+	•	failedLoginAttempts is reset to 0
+	•	lockTime is cleared
+	5.	Converters and encryption:
+	•	The accountLocked field is encrypted using Spring Data MongoDB’s @ValueConverter with a custom AES-based encryption logic via EncryptedBooleanConverter.
+	6.	Security:
+	•	Unlock API is protected with ROLE_ADMIN access.
+	•	Unlock actions are logged for audit purposes.
+
+⸻
+
+✅ Technical Implementation Summary
+	•	Updated User entity to include:
+	•	failedLoginAttempts, accountLocked, lockTime
+	•	Used @ValueConverter(EncryptedBooleanConverter.class) to store encrypted account lock status.
+	•	Added custom converters via PropertyValueConverter<Boolean, String, ValueConversionContext>.
+	•	Added lockout logic inside AuthenticationService.authenticate().
+	•	Added admin controller with:
+	•	PUT /api/admin/unlock/{username}
+	•	Optional: Enabled Spring Security role-based access on unlock endpoint.
+	•	Optional: Logging unlock actions via SLF4J or to an AuditLog collection.
+
+✅ Feature implemented and verified:
+	1.	Account is now locked after 5 consecutive failed login attempts.
+	2.	Lockout status (accountLocked) is stored in encrypted format using @ValueConverter and a custom EncryptedBooleanConverter.
+	3.	User receives proper error message when account is locked: “Your account is locked. Please contact admin to unlock.”
+	4.	Admin unlock API added at PUT /api/admin/unlock/{username} — resets lock status, attempts, and timestamp.
+	5.	Spring Security role-based protection (ROLE_ADMIN) applied to the unlock endpoint.
+	6.	Manual unlock actions are logged for traceability.
+	7.	Code reviewed and tested locally and on dev environment.
+
+✅ Ready for QA validation.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
 Here is the updated Jira ticket including the additional behavior for local and SSO user types:
 
 
