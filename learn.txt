@@ -1,3 +1,5 @@
+https://learn.microsoft.com/en-us/users/me/achievements?WT.mc_id=ilt_partner_webpage_wwl&ocid=3575870&redeem=NXGMD2
+
 🛠️ Ticket Title:
 
 Add: Enum Validation for Create & Update ConfigurationProperty API
