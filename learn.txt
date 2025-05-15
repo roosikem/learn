@@ -1,3 +1,122 @@
+Perfect — thanks for the final detail! Here's the updated and complete Jira ticket with the correct behavior captured:
+
+
+---
+
+Title:
+[Plugin v2.9.3] User Message Response Not Received When Welcome Message is Present in Apple Business Chat
+
+Type:
+Bug
+
+Priority:
+High
+
+
+---
+
+Description:
+In plugin version 2.9.3, when a welcome message is present in the system, the plugin returns only the welcome message upon receiving a user message via Apple Business Chat, but does not return a response for the user's message.
+
+This issue occurs during the first interaction and results in a missing response for the message sent by the user. However, this behavior works correctly in earlier versions like plugin v3.1.0, where both the welcome message and user message response are returned.
+
+
+---
+
+Steps to Reproduce:
+
+1. Open the Apple Business Chat window.
+
+
+2. Ensure that a welcome message is configured in the system.
+
+
+3. Send a message like: "test feature simple message"
+
+
+4. Observe that:
+
+The welcome message is received.
+
+The response to the user message is NOT received.
+
+
+
+
+
+---
+
+Expected Behavior:
+
+If a welcome message exists, the system should return both:
+
+1. The configured welcome message
+
+
+2. The response for the user’s message (e.g., "This is a simple message")
+
+
+
+If no welcome message exists, the system should return only the user message response — which is already working as expected.
+
+
+
+---
+
+Actual Behavior:
+
+When a welcome message is configured:
+
+Only the welcome message is received.
+
+The response for the user’s input message is missing.
+
+
+When no welcome message is configured:
+
+The response to the user message is correctly received.
+
+
+
+
+---
+
+Impact:
+
+Users receive no reply to their first message when a welcome message is configured.
+
+Leads to a broken or unresponsive experience in live chat scenarios.
+
+
+
+---
+
+Action Required:
+
+Investigate and fix the response flow to ensure that the user message response is always sent, regardless of whether a welcome message is present.
+
+
+
+---
+
+Environment:
+
+Plugin Version: 2.9.3 (Issue present)
+
+Plugin Version: 3.1.0 (Working correctly)
+
+Channel: Apple Business Chat
+
+
+
+---
+
+Let me know if you'd like this formatted as a subticket or included in a specific sprint or release version.
+
+
+
+--------------------------------------
+
 Here is a professionally written and structured Jira ticket based on your input:
 
 
