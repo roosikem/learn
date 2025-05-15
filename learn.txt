@@ -1,3 +1,65 @@
+Here is a professionally written and structured Jira ticket based on your input:
+
+
+---
+
+Title:
+Fix: Verbose text/plain Message Not Sent with Attachment in Plugin Version 3.x.x for Image Recognition
+
+Type:
+Bug
+
+Priority:
+Medium (Adjust as per impact)
+
+Description:
+In the current implementation of the Image Recognition feature plugin (version 3.x.x), the system is sending a verbose text/plain message along with the attachment. This behavior was not present in the previous plugin versions.
+
+Issue Observed:
+
+In plugin version 3.x.x, a text/plain verbose message is being sent in addition to the image attachment.
+
+In earlier versions, this verbose message was not sent, which indicates a regression or unintended behavior change.
+
+
+Expected Behavior:
+The plugin should replicate the behavior of earlier versions by not sending the verbose text/plain message along with the attachment—unless explicitly configured.
+
+Steps to Reproduce:
+
+1. Trigger the image recognition feature with a sample image.
+
+
+2. Observe the outgoing message payload in version 3.x.x.
+
+
+3. Compare with the behavior in earlier versions.
+
+
+
+Impact:
+
+May affect downstream systems or integrations expecting only the image attachment.
+
+Can lead to inconsistencies in message handling.
+
+
+Suggested Fix:
+Review and align the message construction logic in version 3.x.x to match the previous plugin behavior or provide a configurable option to control verbosity.
+
+Environment:
+Plugin Version: 3.x.x
+Feature: Image Recognition
+Message Type: text/plain with attachment
+
+
+---
+
+Would you like me to generate subtasks or link this to an epic or release version?
+
+
+
+-------------------------------
 https://learn.microsoft.com/en-us/users/me/achievements?WT.mc_id=ilt_partner_webpage_wwl&ocid=3575870&redeem=NXGMD2
 
 🛠️ Ticket Title:
