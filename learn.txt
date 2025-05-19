@@ -1,3 +1,26 @@
+{
+  "type": "tobi-only",
+  "name": "",
+  "plainText": false,
+  "secretData": {
+    "appId": "",
+    "tobi": {
+      "callbackUrl": "https://sdsfsf.execute-api.eu-west-1.amazonaws.com/dev/",
+      "apix": {
+        "key": "",
+        "secret": "",
+        "botName": "",
+        "scopeList": "CHATBOT_ALL,OAUTH2_CLIENT_CREDENTIALS_GRANT",
+        "authUrl": "OAuth2ClientCredentialsGrant/v1/token"
+      }
+    },
+    "channel": "tobi-web",
+    "opco": "TOBI",
+    "integrationMethod": "TOBI",
+    "flow": "tobi_chat"
+  }
+}
+
 Perfect — thanks for the final detail! Here's the updated and complete Jira ticket with the correct behavior captured:
 
 
