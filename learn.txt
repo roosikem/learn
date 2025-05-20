@@ -1,3 +1,19 @@
+Here’s a professionally worded description you can use in a Jira ticket:
+
+
+---
+
+Title:
+Implement Create/Update Validation for Configuration Property (Composite Key: Name + ComponentType)
+
+Description:
+Add validation logic for configuration property creation and update operations. The validation should ensure that the combination of name and componentType is unique and correctly validated before persisting to the database.
+This applies to both create and update APIs to prevent duplication or invalid entries.
+
+Let me know if you want to include AC (Acceptance Criteria) or technical details.
+
+
+
 {
   "type": "tobi-only",
   "name": "",
