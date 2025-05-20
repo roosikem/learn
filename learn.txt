@@ -1,3 +1,46 @@
+Here’s a suggested Jira ticket title and description for your task:
+
+
+---
+
+🏷️ Jira Title
+
+Implement JSON schema validation for Secret Manager based on type field
+
+
+---
+
+📝 Description
+
+Implement schema-based request validation in the Secret Manager service depending on the type field value in the request payload.
+
+Supported types (examples):
+
+tobi-only
+
+genesys-only
+
+
+Requirements:
+
+Validate incoming requests using appropriate JSON schema depending on the type.
+
+Ensure that each schema enforces field presence, format, and constraints based on integration requirements.
+
+Return clear error messages for schema violations.
+
+
+Outcome:
+Stronger validation pipeline to ensure only structurally correct requests are processed based on integration type.
+
+
+---
+
+Let me know if you’d like a subtasks breakdown or to include sample schemas.
+
+
+
+
 Here’s a professionally worded description you can use in a Jira ticket:
 
 
