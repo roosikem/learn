@@ -1,3 +1,85 @@
+✅ Great idea — here’s a polished Jira ticket detail with your suggested title and refined description:
+
+
+---
+
+📌 Title
+
+Creating API for fetching secrets by org and environment tags with improved performance and safety
+
+
+---
+
+📌 Description
+
+Implemented an API in AwsSecretsManagerService to fetch secrets from AWS Secrets Manager based on provided org, environment, and other tags.
+
+Enhancements included:
+
+Single tag map creation per secret to avoid redundant processing.
+
+Combined filtering and mapping in a single pass for improved efficiency.
+
+Safe tag value extraction using getOrDefault to handle missing tags gracefully (e.g. no NullPointerException if org, environment, or botType tags are missing).
+
+Proper pagination handling to support large datasets (1000+ secrets).
+
+
+This API supports dynamic tag key-value filtering and ensures stable behavior for production workloads.
+
+
+---
+
+📌 Acceptance Criteria
+
+✅ API returns secrets filtered by org and environment (or any provided tag key-value pair).
+✅ No runtime exceptions if secrets lack expected tags.
+✅ Handles large volumes of secrets efficiently.
+✅ Logs appropriate errors on API failure.
+
+
+---
+
+📌 Impact
+
+New capability to fetch secrets dynamically by org + environment tags.
+
+Improved performance and code maintainability for tag-based secret retrieval.
+
+Safer handling of optional or missing tags.
+
+
+
+---
+
+📌 Code components modified
+
+AwsSecretsManagerService#getSecretsByTags
+
+AwsSecretsManagerService.GetSecretValue DTO
+
+
+
+---
+
+📌 Test scenarios
+
+✅ Fetch secrets with both org and environment tags present.
+
+✅ Fetch secrets with missing org or environment tag → no exception.
+
+✅ Fetch secrets dataset of 1000+ items → verify performance.
+
+✅ Fetch secrets with various combinations of tag filters.
+
+
+
+---
+
+💬 If you want this in Jira markup format or ready-to-paste JSON for a Jira API, let me know — I can generate it! 🚀
+
+
+
 Here’s a suggested Jira ticket title and description for your task:
 
 
