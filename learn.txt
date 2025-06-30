@@ -1,3 +1,67 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.*;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+@Service
+public class UiTestTokenService {
+
+    private static final Logger log = LoggerFactory.getLogger(UiTestTokenService.class);
+    private final RestTemplate restTemplate;
+
+    public UiTestTokenService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    /**
+     * Fetches a test token using basic auth for UI testing only.
+     *
+     * @param url Auth endpoint URL
+     * @param username Username for basic auth
+     * @param password Password for basic auth
+     * @param xsrfToken Optional XSRF token if required
+     * @return The raw response body (e.g. token or HTML) or null if request failed
+     */
+    public String fetchUiTestToken(String url, String username, String password, String xsrfToken) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        if (xsrfToken != null && !xsrfToken.isBlank()) {
+            headers.add("cookie", "XSRF-TOKEN=" + xsrfToken);
+        }
+
+        String auth = username + ":" + password;
+        String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+        headers.set("Authorization", "Basic " + encodedAuth);
+
+        HttpEntity<String> requestEntity = new HttpEntity<>(null, headers);
+
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(
+                    url,
+                    HttpMethod.POST,
+                    requestEntity,
+                    String.class
+            );
+
+            if (response.getStatusCode().is2xxSuccessful()) {
+                log.info("UI test token fetched successfully");
+                return response.getBody();
+            } else {
+                log.warn("UI test token fetch failed with status: {}", response.getStatusCode());
+                return null;
+            }
+        } catch (Exception e) {
+            log.error("Exception while fetching UI test token", e);
+            return null;
+        }
+    }
+}
+----------
 ✅ Great idea — here’s a polished Jira ticket detail with your suggested title and refined description:
 
 
