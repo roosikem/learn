@@ -1,3 +1,105 @@
+✅ Here’s a clean, production-standard Jira ticket detail for your described work:
+
+
+---
+
+📌 Title
+
+Add test-tool/auth API for generating Cognito token for UI Test Tool simulation
+
+
+---
+
+📌 Description
+
+Implemented a new API at test-tool/auth to generate a Cognito token for UI Test Tool functionality.
+
+Purpose:
+
+Allow UI Test Tool to simulate Bridge Message API calls by first obtaining a valid Cognito token.
+
+This token is for UI simulation only — it is not an app or system token.
+
+
+Key features:
+✅ REST endpoint created under test-tool/auth.
+✅ Uses provided credentials (via basic auth) to generate token from Cognito.
+✅ Token is cached in memory per URL until expiry (based on expires_in field).
+✅ Automatically refreshes token when expired.
+✅ Protects sensitive data (e.g. credentials) in logs via masking.
+
+
+---
+
+📌 Use Case
+
+The UI Test Tool simulates Bridge Message API calls.
+
+Before making the Bridge Message API call, it calls test-tool/auth to get a valid Cognito token.
+
+This token is attached to subsequent simulation API calls.
+
+
+
+---
+
+📌 Acceptance Criteria
+
+✅ test-tool/auth API returns a valid Cognito token for UI testing.
+✅ Token is cached in memory per URL until expiry.
+✅ Token refreshes automatically when expired.
+✅ No sensitive data appears in logs (e.g., password, token).
+✅ Proper error handling and meaningful log messages on failure.
+
+
+---
+
+📌 Impact
+
+Enables UI testing of Bridge Message API simulations with valid tokens.
+
+Reduces load on Cognito through in-memory token reuse.
+
+Prevents accidental exposure of secrets in logs.
+
+
+
+---
+
+📌 Code components modified
+
+Added UiTestTokenService (or similar) for token handling.
+
+Added REST controller for test-tool/auth API.
+
+Enhanced logging for security.
+
+
+
+---
+
+📌 Test scenarios
+
+✅ Successfully generate token with valid credentials.
+
+✅ Return cached token until expiry.
+
+✅ Refresh token after expiry and return new token.
+
+✅ Handle invalid credentials gracefully.
+
+✅ Log sensitive info safely (masked).
+
+
+
+---
+
+👉 If you'd like, I can provide this in Jira markup format or generate Swagger API doc entry for the new API! Let me know 🚀.
+
+
+
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
