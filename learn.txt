@@ -1,4 +1,91 @@
-✅ Here’s a clean, production-standard Jira ticket detail for your described work:
+
+---
+
+📌 Title
+
+Add new API for generating dynamic host URL for Test Tool simulation
+
+
+---
+
+📌 Description
+
+Developed a new API in the Test Tool that dynamically generates the host URL for simulation purposes.
+
+Key features:
+✅ API accepts an environment parameter in the request (e.g., dev, qa, prod).
+✅ Host URL is generated dynamically based on this environment.
+✅ The URL is resolved from environment variables (e.g., HOST_URL_DEV, HOST_URL_QA, HOST_URL_PROD).
+✅ Graceful handling of missing or invalid environment mappings (error or default URL).
+✅ Logs the selected environment and resolved URL safely for traceability.
+
+
+---
+
+📌 Use Case
+
+The Test Tool simulates calling external services (e.g., Message API).
+
+Before calling the service, it dynamically generates the host URL based on the provided environment.
+
+Supports flexible testing across multiple environments without code changes.
+
+
+
+---
+
+📌 Acceptance Criteria
+
+✅ API returns the correct host URL based on provided environment param.
+✅ Supports at least dev, qa, prod environments.
+✅ Returns meaningful error if environment variable is missing or environment is unsupported.
+✅ Does not log sensitive information (no hardcoded secrets in logs).
+✅ Provides clear log output for resolved environment and URL.
+
+
+---
+
+📌 Impact
+
+Enables dynamic URL generation for simulation of external API calls.
+
+Reduces hardcoding and improves flexibility for testing multiple environments.
+
+Simplifies maintenance and environment configuration.
+
+
+
+---
+
+📌 Code components modified
+
+New controller method added for Test Tool host URL generation API.
+
+New utility/service method for environment-to-host resolution.
+
+Added logging for resolved environment and URL.
+
+
+
+---
+
+📌 Test scenarios
+
+✅ Request with env=dev → returns URL from HOST_URL_DEV.
+
+✅ Request with env=qa → returns URL from HOST_URL_QA.
+
+✅ Request with env=prod → returns URL from HOST_URL_PROD.
+
+✅ Request with invalid env → returns error or default URL.
+
+✅ Request with missing env variable → handled gracefully.
+
+
+
+---
+
+👉 If you'd like, I can draft the controller code, service logic, or unit test cases for this API. Let me know! 🚀
 
 
 ---
