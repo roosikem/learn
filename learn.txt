@@ -1,4 +1,36 @@
 
+---
+
+🎫 Title:
+
+Investigate and identify reason for setting new code baseline as 3.2.0 in SonarQube portal
+
+
+---
+
+Description:
+
+We need to analyze and document the reasoning behind setting 3.2.0 as the new code baseline in SonarQube. This will ensure that the decision to update the baseline is justified, aligns with release milestones, and supports accurate code quality tracking.
+
+
+---
+
+Objective:
+
+🔹 Identify why version 3.2.0 is appropriate as the new baseline rather than continuing with 2.9.3.
+🔹 Confirm the business, technical, or release-related reasons that warrant this change.
+🔹 Provide supporting evidence (e.g., release notes, stability reports, team consensus).
+
+
+---
+
+Acceptance Criteria:
+
+✅ Documented reason for choosing 3.2.0 as the new baseline (e.g., major release, stable code, clean state).
+✅ Validation that 3.2.0 represents a significant, clean, or stable release suitable for baseline.
+✅ Impact assessment on how this change will affect code quality tracking and Quality
+
+
 
 ---
 
