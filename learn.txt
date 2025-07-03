@@ -1,4 +1,99 @@
 
+
+---
+
+🎫 Title:
+
+SonarQube portal - missing past analysis data
+
+
+---
+
+Description:
+
+We have identified that historical data for past code analyses is missing in the SonarQube portal. The portal is only displaying data from recent analyses, and prior records (e.g., trends, issues history) are not visible in project dashboards or charts.
+
+
+---
+
+Impact:
+
+Inability to view historical trends (code smells, bugs, vulnerabilities over time).
+
+Loss of visibility into improvements or regressions across previous builds.
+
+Hinders audit, compliance, and reporting efforts related to code quality.
+
+
+
+---
+
+Steps to Reproduce:
+
+1️⃣ Login to the SonarQube portal.
+2️⃣ Navigate to any project that has previously had multiple analyses.
+3️⃣ Check the trends and history sections on the project dashboard.
+4️⃣ Observe that older analysis data is missing or incomplete.
+
+
+---
+
+Expected Result:
+
+All historical code analysis data should be visible and accessible for projects.
+
+
+---
+
+Actual Result:
+
+Only recent analysis data is shown; older data is missing from dashboards and reports.
+
+
+---
+
+Environment:
+
+SonarQube version: <fill in>
+
+Deployment: <fill in - e.g., on-prem / AWS / GCP>
+
+Last known good date (when historical data was visible): <fill in>
+
+
+
+---
+
+Priority:
+
+⚡ High — Affects quality tracking, reporting, and historical analysis.
+
+
+---
+
+Next Steps (for assignee):
+
+✅ Check SonarQube DB integrity and data retention policies.
+✅ Review cleanup settings (e.g., sonar.dbcleaner.cleanDirectory, sonar.dbcleaner.daysBeforeDeletingInactiveBranches).
+✅ Analyze SonarQube logs for cleanup or DB-related errors.
+✅ Propose remediation steps (e.g., DB restore, reconfiguration).
+
+
+---
+
+Attachments:
+
+[ ] Screenshot(s) showing the missing data
+
+[ ] Relevant SonarQube logs (if available)
+
+
+
+---
+
+If you’d like, I can help draft queries to check DB data, propose Sonar config settings, or prepare recovery steps. Let me know! 🚀
+
+
 ---
 
 📌 Title
