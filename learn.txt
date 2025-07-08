@@ -1,3 +1,15 @@
+Absolutely! Here's the revised and polished version with your input:
+
+
+---
+
+"Yes, you are correct. In the versions prior to 2.7.0, the plugin was sending the InteractionId by default. However, in a later version, some changes were introduced, and the plugin started sending the ContactId by default. To provide flexibility, we then introduced a configurable option that allows this behavior to be changed dynamically via the properties file, using the key copy_identifier_value_from, with the default value set to ContactId. This same configuration exists in version 3.2.0 as well."
+
+
+---
+
+Let me know if you'd like a shorter or more technical version.
+
 
 ---
 
