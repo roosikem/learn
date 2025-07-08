@@ -1,6 +1,12 @@
 
 ---
 
+"In the versions prior to 2.7.0, the plugin was sending the InteractionId by default. Starting from version 2.7.0, the plugin sends the ContactId by default. Later, we introduced a configurable feature to change this behavior dynamically through the properties file by setting the key copy_identifier_value_from=InteractionId."
+
+
+---
+---
+
 "By default, the plugin sends the ContactId in the form.identifier field. If you wish to change this behavior, please update the following key in the plugin properties file."
 
 
