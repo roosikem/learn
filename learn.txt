@@ -1,6 +1,14 @@
 
 ---
 
+We are receiving the same conversation ID for different users because the plugin is receiving the same ContactId for each user session. When the plugin sends a request to GPT, it includes this ContactId as the value of form.identifier. Since the identifier remains the same, the GPT service returns the same conversation ID, causing the responses to overlap across different users.
+
+
+---
+
+
+---
+
 🎫 Title:
 
 Investigate and identify reason for setting new code baseline as 3.2.0 in SonarQube portal
