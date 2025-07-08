@@ -1,4 +1,10 @@
 
+---
+
+"By default, the plugin sends the ContactId in the form.identifier field. If you wish to change this behavior, please update the following key in the plugin properties file."
+
+
+---
 
 We have investigated and found that the plugin is receiving the same ContactId in the Genesys request for every user. As a result, it is passing this same ContactId in the chatbot request as form.identifier. This is causing the chatbot to treat all requests as part of the same conversation, resulting in the same conversation ID being returned for different users.
 
