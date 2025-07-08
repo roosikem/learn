@@ -1,4 +1,12 @@
 
+
+We have investigated and found that the plugin is receiving the same ContactId in the Genesys request for every user. As a result, it is passing this same ContactId in the chatbot request as form.identifier. This is causing the chatbot to treat all requests as part of the same conversation, resulting in the same conversation ID being returned for different users.
+
+We are now looking into how to ensure a unique ContactId or session identifier is used for each user interaction to resolve this issue.
+
+
+---
+
 ---
 
 We are receiving the same conversation ID for different users because the plugin is receiving the same ContactId for each user session. When the plugin sends a request to GPT, it includes this ContactId as the value of form.identifier. Since the identifier remains the same, the GPT service returns the same conversation ID, causing the responses to overlap across different users.
